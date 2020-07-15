@@ -1,0 +1,32 @@
+version: '3'
+services:
+    node1:
+        build:
+            dockerfile: Dockerfile
+            context: ./app
+        environment:
+          - NAME=node1
+        networks:
+          - app-network
+    node2:
+        build:
+            dockerfile: Dockerfile
+            context: ./app
+        environment:
+          - NAME=node2
+        networks:
+          - app-network
+    nginx:
+        build:
+          dockerfile: Dockerfile
+          context: ./nginx
+        depends_on:
+          - node1
+          - node2
+        ports:
+          - "8080:80"
+        networks:
+          - app-network
+networks:
+  app-network:
+      driver: bridge
