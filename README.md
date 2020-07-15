@@ -20,3 +20,4 @@ sudo docker exec -it loadbalancer-node-docker_nginx_1 bash
 ```
 tail -f var/log/nginx/lbaccess.log
 ```
+## Общее описание
