@@ -11,7 +11,7 @@
 sudo docker-compose up --build -d
 ```
 Проверка
-1. Открыть браузер по адресу http://localhost:8080/
+1. Открыть браузер по адресу http://localhost:8080/ и обновить страницу несколько раз.
 2. Проверить записи логов зайдя внутрь контейнера
 ```
 sudo docker exec -it loadbalancer-node-docker_nginx_1 bash
